@@ -2,9 +2,6 @@ var expect = require('chai').expect;
 var request= require('request');
 var WebPage = require('./web.page');
 
-var loggererror = log4js.getLogger('error'); // initialize the var to use.
-var loggerinfo = log4js.getLogger('info');
-
 describe('Check Book Now Buttons', function() {
 
     it('should test All Book Now Buttons on Sandals Page', function() {
