@@ -4,44 +4,78 @@ var WebPage = require('./web.page');
 
 describe('Check Book Now Buttons', function() {
 
-    it('should test All Book Now Buttons on Sandals Page', function() {
+    it('should test Sandals Book Now Button from Menu', function() {
         WebPage.open('http://www.sandals.com/');
-        browser.pause(2000);
-
-        console.log("Matches- " + WebPage.buttons.value.length);
-
-
-   for(var z=0; z<WebPage.buttons.value.length; z++){
-
-
-     browser.click('.mm-rsv');
-
-         browser.pause(2000);
-
+        WebPage.pause(2000);
+        WebPage.SandalsMenu.click();
+        WebPage.pause(2000);
+        WebPage.SandalsButtonMenu.click();
+        WebPage.pause(2000);
+        expect(browser.getUrl()).to.include('obe');
         
+    });
 
-        browser.click('.' + WebPage.buttons.value[z].getAttribute('class'));
 
-        browser.pause(2000);
+ it('should test Sandals Book Now Button from Quick Quote', function() {
+        WebPage.open('http://www.sandals.com/');
+        browser.refresh()
+        WebPage.pause(2000)
+
+
+         if(WebPage.PopUp.isVisible())
+         {
+           WebPage.ClosePopUp.click()
+         }
+
+
+
+        WebPage.pause(5000)
+        WebPage.SandalsButtonQQ.click();
+        WebPage.pause(2000)
 
         expect(browser.getUrl()).to.include('obe');
-
         
+    });
+
+  it('should test Beaches Book Now Button from Menu', function() {
+        WebPage.open('http://www.beaches.com/');
+        WebPage.pause(2000);
+        WebPage.BeachesMenu.click();
+        WebPage.pause(2000);
+        WebPage.BeachesButtonMenu.click();
+        WebPage.pause(2000);
+        expect(browser.getUrl()).to.include('obe');
+        
+    });
 
 
 
-                    }
+  it('should test Beaches Book Now Button from Quick Quote', function() {
+        WebPage.open('http://www.beaches.com/');
+        browser.refresh()
+        WebPage.pause(2000)
 
-   
+
+         if(WebPage.PopUp.isVisible())
+         {
+           WebPage.ClosePopUp.click()
+         }
 
 
 
+        WebPage.pause(5000)
+        WebPage.BeachesButtonQQ.click();
+        WebPage.pause(2000)
 
+        expect(browser.getUrl()).to.include('obe');
         
     });
 
 
 });
+
+
+
 
 
 
