@@ -29,7 +29,7 @@ describe('Check Book Now Buttons', function() {
 
 
 
-        WebPage.pause(5000)
+        WebPage.pause(2000)
         WebPage.SandalsButtonQQ.click();
         WebPage.pause(2000)
 
@@ -63,7 +63,7 @@ describe('Check Book Now Buttons', function() {
 
 
 
-        WebPage.pause(5000)
+        WebPage.pause(2000)
         WebPage.BeachesButtonQQ.click();
         WebPage.pause(2000)
 
